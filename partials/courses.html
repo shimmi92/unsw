@@ -1,0 +1,74 @@
+<style>
+ .bleh {
+    background-color: #b0c4de;
+} 
+</style>
+<div class="row">
+   image goes here
+</div>
+<div class="row">
+   <div class="col-md-3">
+                             <div class="panel panel-success">
+                                <div class="panel-heading">
+                                  <h3 class="panel-title">Shortcuts</h3>
+                                </div>
+                               
+                                 <div class="list-group">
+                                      <a ng-click="pAZ()" class="list-group-item">Programs A-Z</a>
+                    									<a ng-click="pF()" class="list-group-item">Programs by Faculty</a>
+                    									<a ng-click="cAZ()" class="list-group-item">Courses A-Z</a>
+                    									<a ng-click="csa()" class="list-group-item">Courses by Subject Area</a>
+                    									<a ng-click="sAZ()"class="list-group-item">Specialisations A-Z</a>
+                    									<a ng-click="aoi()" class="list-group-item">Areas of Interest</a>
+                    									<a ng-click="careers()" class="list-group-item">Careers</a>
+                    									<a ng-click="grsi()" class="list-group-item">Genereal Rules & Student Info</a>
+                    									<a ng-click="fs()" class="list-group-item">Faculties & Schools</a>
+                    									<a ng-click="ct()"class="list-group-item">Class Timetable</a>
+                    									<a ng-click="glossary()" class="list-group-item">Glossary</a>
+                                   
+
+                                 </div>
+
+                             </div>
+
+   <!-- end col-3 -->
+   </div>
+   <div class="col-md-9">
+      <div ng-show="cslFlags.pAZFlag">
+         Programs AZ
+      </div>
+       <div ng-show="cslFlags.pFFlag">
+         Programs by faculty
+      </div>
+       <div ng-show="cslFlags.cAZFlag">
+         courses by AZ
+      </div>
+       <div ng-show="cslFlags.csaFlag">
+         courses by subject area
+      </div>
+       <div ng-show="cslFlags.sAZFlag">
+         Specialization AZ
+      </div>
+       <div ng-show="cslFlags.aoiFlag">
+         area of interest
+      </div>
+       <div ng-show="cslFlags.careersFlag">
+         careers
+      </div>
+       <div ng-show="cslFlags.grsiFlag">
+         genereal rules and student info
+      </div>
+       <div ng-show="cslFlags.fsFlag">
+         faculty and schools
+      </div>
+       <div ng-show="cslFlags.ctFlag">
+         class and timetable
+      </div>
+       <div ng-show="cslFlags.glossaryFlag">
+         glosarry flag
+      </div>
+
+   <!-- end col-9 -->
+   </div>
+<!-- end row -->
+</div>

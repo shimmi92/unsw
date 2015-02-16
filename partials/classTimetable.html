@@ -1,0 +1,70 @@
+<div class="backg">
+   <br>
+   <div class="panel panel-default">
+	  <div class="panel-body">
+	   
+      <ul class="nav nav-tabs nav-justified">
+		  <li role="presentation" class="active" data-toggle="tab"><a ng-click="kensCampus()">Kensington Campus </a></li>
+		  <li role="presentation" data-toggle="tab"><a ng-click="padCampus()">Paddington Campus </a></li>
+		  <li role="presentation" data-toggle="tab"><a ng-click="adfaCampus()">UNSW Canberra at ADFA </a></li>
+        </ul>
+
+       
+          <div ng-show="kensCampusFlag">
+              <div class="panel panel-success">
+                <div class="panel-body">
+                   <div class="table-responsive">
+                       <table id="kensingtonCampusTable" class="display table .table-condensed">
+                         <thead>
+                           <th>Subject Area</th>
+                           <th></th>
+                           <th>Offered By</th>
+                       
+                         </thead>
+                      </table>
+                  </div>
+                </div>
+              </div> 
+          </div>
+
+          <div ng-show="padCampusFlag">
+             <div class="panel panel-success">
+                <div class="panel-body">
+                   <div class="table-responsive">
+                       <table id="paddingtonCampusTable" class="display table .table-condensed">
+                         <thead>
+                           <th>Subject Area</th>
+                           <th></th>
+                           <th>Offered By</th>
+                       
+                         </thead>
+                      </table>
+                  </div>
+                </div>
+              </div> 
+          </div>
+
+          <div ng-show="adfaCampusFlag">
+              <div class="panel panel-success">
+                <div class="panel-body">
+                   <div class="table-responsive">
+                       <table id="adfaCampusTable" class="display table .table-condensed">
+                         <thead>
+                           <th>Subject Area</th>
+                           <th></th>
+                           <th>Offered By</th>
+                       
+                         </thead>
+                      </table>
+                  </div>
+                </div>
+              </div> 
+          </div> 
+	
+		
+	  </div>
+	</div>
+	
+
+
+</div>
