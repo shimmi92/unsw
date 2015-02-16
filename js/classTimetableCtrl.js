@@ -52,7 +52,7 @@ app.controller('classTimetableCtrl', function ($scope){
                      { "width": "40%", "targets": 0 }
                    ],
                  "ordering": false,
-                      "ajax": "subject.json",
+                      "ajax": "json/subject.json",
                       "columns":[  
                           {"data":"code"},
                           {"data":"name"},  //must be the keys in the objects
@@ -70,7 +70,7 @@ app.controller('classTimetableCtrl', function ($scope){
                      { "width": "40%", "targets": 0 }
                    ],
                  "ordering": false,
-                      "ajax": "subject.json",
+                      "ajax": "json/subject.json",
                       "columns":[  
                           {"data":"code"},
                           {"data":"name"},  //must be the keys in the objects

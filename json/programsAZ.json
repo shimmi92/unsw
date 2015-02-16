@@ -1,55 +1,55 @@
 {
   "data":[{
     "program title":"Arts",
-    "award Level":"Bachelor Degree (Pass)",
+    "award level":"Bachelor Degree (Pass)",
     "code":"3403",
     "faculty":"Faculty of Arts & Soc. Science"
   },
   {   
     "program title":"Bioinformatics",
-    "award Level":"Bachelor Degree (Pass)",
+    "award level":"Bachelor Degree (Pass)",
     "code":"3647",
     "faculty":"Faculty of Engineering"
   },
   {
     "program title":"Chemical Engineering  ",
-    "award Level":"Bachelor Degree (Pass)",
+    "award level":"Bachelor Degree (Pass)",
     "code":"3040",
     "faculty":"Faculty of Engineering"
   },
   {
     "program title":"Digital Media",
-    "award Level":"Bachelor Degree (Pass)",
+    "award level":"Bachelor Degree (Pass)",
     "code":"4810",
     "faculty":"Faculty of Art & Design"
   },
   {
     "program title":"Economics ",
-    "award Level":"Bachelor Degree (Pass)",
+    "award level":"Bachelor Degree (Pass)",
     "code":"3543",
     "faculty":"UNSW Business School"
   },
   {
     "program title":"Food Science",
-    "award Level":"Bachelor Degree (Honours)",
+    "award level":"Bachelor Degree (Honours)",
     "code":"3065",
     "faculty":"Faculty of Engineering"
   },
   {
     "program title":"Mechanical Eng (Hons) (CDF)",
-    "award Level":"Bachelor Degree (Honours)",
+    "award level":"Bachelor Degree (Honours)",
     "code":"4478",
     "faculty":"UNSW Canberra at ADFA"
   },
   {
     "program title":"Optometry/Science",
-    "award Level":"Bachelor Degree (Pass)",
+    "award level":"Bachelor Degree (Pass)",
     "code":"3952",
     "faculty":"Faculty of Science"
   },
   {
     "program title":"Telecommunications",
-    "award Level":"Bachelor Degree (Pass)",
+    "award level":"Bachelor Degree (Pass)",
     "code":"3643",
     "faculty":"Faculty of Engineering"
   }

@@ -1,7 +1,8 @@
 var app = angular.module('Control');
 app.controller('coursesCtrl', function ($scope,courseSelectionFLags){
    $scope.cslFlags = courseSelectionFLags.data;
-
+    //global variable that ensures each table is only created once
+    var pAZCreated = false;
    //controllers for button clicks ot div elements
    //displays the div for programs A-Z
    $scope.pAZ = function(){
@@ -18,7 +19,27 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags){
    	   $scope.cslFlags.gglossaryFlag = false;
    // check the flag for postgrad,undergrad... then send the correct reposne to php to query the database and create 
    //relevant json object to load into datatable
-
+   $(document).ready(function() {
+      //initialises the datatable from the json object
+      
+       if(pAZCreated == false){
+          pAZTable1 = $('#pAZTable').DataTable({
+                         "columnDefs": [
+                        { "width": "40%", "targets": 0 }
+                      ],
+                    "ordering": false,
+                         "ajax": "json/programsAZ.json",
+                         "columns":[  
+                             {"data":"program title"},
+                             {"data":"award level"},  //must be the keys in the objects
+                             {"data":"code"}, 
+                             {"data":"faculty"}
+                         ],
+            
+                      });
+          pAZCreated = true;
+      }
+   });
 
 
 
