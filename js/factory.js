@@ -36,4 +36,15 @@ app.factory('quickLinkFlags', function ($rootScope){
          return vars;
 
  })
+.factory('studyTypeFlags', function ($rootScope){
+         var vars = $rootScope.$new(true);
+         vars.data = {
+               undergraduateFlag:false,
+               postgraduateFlag:false,
+               postgraduateResearchFlag:false,
+               nonAwardFlag:false
+                      }
+         return vars;
+
+ })
 ;

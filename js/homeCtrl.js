@@ -1,7 +1,8 @@
 var app = angular.module('Control');
-app.controller('homeCtrl', function ($scope,quickLinkFlags){
+app.controller('homeCtrl', function ($scope,quickLinkFlags,studyTypeFlags){
    //holds the quickLinkFlags service
    $scope.qL = quickLinkFlags.data;
+   $scope.stf = studyTypeFlags.data;
 
    $scope.duaRedirect = function(){
    	   $scope.qL.duaFlag = true;
@@ -134,6 +135,32 @@ app.controller('homeCtrl', function ($scope,quickLinkFlags){
    	   $scope.qL.academicCalFlag = false;
    	   $scope.qL.feeEstimatorFlag = true;
 
+   }
+
+   //control pstudy type clicks
+   $scope.postGradRes = function(){
+      $scope.stf.undergraduateFlag=false;
+      $scope.stf.postgraduateFlag=false;
+      $scope.stf.postgraduateResearchFlag=true;
+      $scope.stf.nonAwardFlag=false;
+   }
+   $scope.undergrad = function(){
+      $scope.stf.undergraduateFlag=true;
+      $scope.stf.postgraduateFlag=false;
+      $scope.stf.postgraduateResearchFlag=false;
+      $scope.stf.nonAwardFlag=false
+   }
+   $scope.postgrad = function(){
+      $scope.stf.undergraduateFlag=false;
+      $scope.stf.postgraduateFlag=true;
+      $scope.stf.postgraduateResearchFlag=false;
+      $scope.stf.nonAwardFlag=false;
+   }
+   $scope.nonAward = function(){
+      $scope.stf.undergraduateFlag=false;
+      $scope.stf.postgraduateFlag=false;
+      $scope.stf.postgraduateResearchFlag=false;
+      $scope.stf.nonAwardFlag=true;
    }
 
 

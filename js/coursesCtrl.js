@@ -1,6 +1,9 @@
 var app = angular.module('Control');
-app.controller('coursesCtrl', function ($scope,courseSelectionFLags){
+app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFlags){
    $scope.cslFlags = courseSelectionFLags.data;
+   $scope.stf = studyTypeFlags.data;
+
+   console.log($scope.stf.undergraduateFlag);
     //global variable that ensures each table is only created once
     var pAZCreated = false;
        //tables for programs by faculty
@@ -18,6 +21,8 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags){
     var cAZCreated = false;
     //
     var csaCreated = false;
+    //
+    var sAZCreated = false;
 
    //controllers for button clicks ot div elements
    //displays the div for programs A-Z
@@ -312,6 +317,24 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags){
    	   $scope.cslFlags.fsFlag = false;
    	   $scope.cslFlags.ctFlag = false;
    	   $scope.cslFlags.gglossaryFlag = false;
+
+         $(document).ready(function() {
+            if(sAZCreated == false){
+                   sAZTable = $('#sAZTable').DataTable({
+                                  "columnDefs": [
+                                 { "width": "40%", "targets": 0 }
+                               ],
+                             "ordering": true,
+                                  "ajax": "json/sAZ.json",
+                                  "columns":[  
+                                      {"data":"specialisation"},
+                                      {"data":"description"}
+                                  ],
+                     
+                               });
+                   sAZCreated = true;
+               }
+         });
    }
    $scope.aoi = function(){
    	   $scope.cslFlags.pAZFlag = false;

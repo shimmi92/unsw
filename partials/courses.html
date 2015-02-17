@@ -4,8 +4,10 @@
 } 
 </style>
 <div class="row">
-   image goes here
+   <img ng-show="stf.undergraduateFlag" src="images/undergradBanner.png">
+
 </div>
+   <br>
 <div class="row">
    <div class="col-md-3">
                              <div class="panel panel-success">
@@ -23,7 +25,7 @@
                     									<a ng-click="careers()" class="list-group-item">Careers</a>
                     									<a ng-click="grsi()" class="list-group-item">Genereal Rules & Student Info</a>
                     									<a ng-click="fs()" class="list-group-item">Faculties & Schools</a>
-                    									<a ng-click="ct()"class="list-group-item">Class Timetable</a>
+                    									<a href="#/classTimetable" class="list-group-item">Class Timetable</a>
                     									<a ng-click="glossary()" class="list-group-item">Glossary</a>
                                    
 
@@ -233,8 +235,21 @@
               </div> 
           </div>    
       </div>
+      <!-- specialisation AZ -->
        <div ng-show="cslFlags.sAZFlag">
          Specialization AZ
+         <div class="panel panel-success">
+                <div class="panel-body">
+                   <div class="table-responsive">
+                       <table id="sAZTable" class="display table .table-condensed">
+                         <thead>
+                           <th>Specialisation</th>
+                           <th>Description</th>
+                         </thead>
+                      </table>
+                  </div>
+                </div>
+              </div> 
       </div>
        <div ng-show="cslFlags.aoiFlag">
          area of interest

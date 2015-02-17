@@ -1,0 +1,28 @@
+{
+	"data":[
+     {
+        "specialisation":"Accounting",
+        "description":"Accounting involves the analysis of information to effectively manage business resources. It guides investment decisions and facilitates interaction between business and stakeholders. CPA Australia, the Institute of Chartered Accountants Australia and the ..."
+     },
+      {
+        "specialisation":"Business Law",
+        "description":"Business Law focuses on the legal requirements underpinning and regulating all forms of commercial activity. It explores the concept of business morality and the responsibility of company directors and boards to make ethical business decisions. The purpose..."
+     },
+      {
+        "specialisation":"Chemical Engineering ",
+        "description":"Chemical Engineering is the application of the principles of the physical sciences, together with the principles of economics and human relations, to fields in which matter undergoes a change in state, energy content or composition. The chemical engineer i..."
+     },
+      {
+        "specialisation":"Electrical Engineering",
+        "description":"Electrical Engineering is concerned with the design, research, development, planning, manufacture and management of systems and devices relying on electricity and light to transmit data and power which underpin modern economies and contribute to the qualit..."
+     },
+      {
+        "specialisation":"Mathematics",
+        "description":"The discipline of mathematics at UNSW is divided into several areas of study: Pure Mathematics, Applied Mathematics and Statistics. Pure Mathematics is the study of the essential structures of mathematics. Work by pure mathematicians underpins most of the..."
+     },
+      {
+        "specialisation":"Women's and Gender Studies",
+        "description":"Women's and Gender Studies is concerned with feminist scholarship and the issues and debates surrounding sexuality and gender. It is an interdisciplinary field of inquiry that seeks to understand and articulate how gender makes a difference - in the lives ..."
+     }
+	]
+}
