@@ -3,6 +3,22 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags){
    $scope.cslFlags = courseSelectionFLags.data;
     //global variable that ensures each table is only created once
     var pAZCreated = false;
+       //tables for programs by faculty
+    var pfdbsCreated = false;
+    var pffadCreated = false;
+    var pffasCreated = false;
+    var pffbeCreated = false;
+    var pffeCreated = false;
+    var pfflCreated = false;
+    var pffmCreated = false;
+    var pffsCreated = false;
+    var pfubsCreated = false;
+    var pfadfaCreated = false;
+    //
+    var cAZCreated = false;
+    //
+    var csaCreated = false;
+
    //controllers for button clicks ot div elements
    //displays the div for programs A-Z
    $scope.pAZ = function(){
@@ -21,13 +37,13 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags){
    //relevant json object to load into datatable
    $(document).ready(function() {
       //initialises the datatable from the json object
-      
+
        if(pAZCreated == false){
           pAZTable1 = $('#pAZTable').DataTable({
                          "columnDefs": [
                         { "width": "40%", "targets": 0 }
                       ],
-                    "ordering": false,
+                    "ordering": true,
                          "ajax": "json/programsAZ.json",
                          "columns":[  
                              {"data":"program title"},
@@ -40,10 +56,6 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags){
           pAZCreated = true;
       }
    });
-
-
-
-
 
    }
    $scope.pF = function(){
@@ -58,7 +70,174 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags){
    	   $scope.cslFlags.fsFlag = false;
    	   $scope.cslFlags.ctFlag = false;
    	   $scope.cslFlags.gglossaryFlag = false;
+
+         $(document).ready(function() {
+        //initialises the datatables from the json objects created from php database query only once
+
+             if(pfdbsCreated == false){
+                dbsTable = $('#dbsTable').DataTable({
+                               "columnDefs": [
+                              { "width": "40%", "targets": 0 }
+                            ],
+                          "ordering": true,
+                               "ajax": "json/progFaculty(1-10).json",
+                               "columns":[  
+                                   {"data":"program title"},
+                                   {"data":"award level"},  //must be the keys in the objects
+                                   {"data":"code"}, 
+                               ],
+                  
+                            });
+                pfdbsCreated = true;
+            }
+            if(pffadCreated == false){
+                fadTable = $('#fadTable').DataTable({
+                               "columnDefs": [
+                              { "width": "40%", "targets": 0 }
+                            ],
+                          "ordering": true,
+                               "ajax": "json/progFaculty(1-10).json",
+                               "columns":[  
+                                   {"data":"program title"},
+                                   {"data":"award level"},  //must be the keys in the objects
+                                   {"data":"code"}, 
+                               ],
+                  
+                            });
+                pffadCreated = true;
+            }
+            if(pffasCreated == false){
+                fasTable = $('#fasTable').DataTable({
+                               "columnDefs": [
+                              { "width": "40%", "targets": 0 }
+                            ],
+                          "ordering": true,
+                               "ajax": "json/progFaculty(1-10).json",
+                               "columns":[  
+                                   {"data":"program title"},
+                                   {"data":"award level"},  //must be the keys in the objects
+                                   {"data":"code"}, 
+                               ],
+                  
+                            });
+                pffasCreated = true;
+            }
+            if(pffbeCreated == false){
+                fbeTable = $('#fbeTable').DataTable({
+                               "columnDefs": [
+                              { "width": "40%", "targets": 0 }
+                            ],
+                          "ordering": true,
+                               "ajax": "json/progFaculty(1-10).json",
+                               "columns":[  
+                                   {"data":"program title"},
+                                   {"data":"award level"},  //must be the keys in the objects
+                                   {"data":"code"}, 
+                               ],
+                  
+                            });
+                pffbeCreated = true;
+            }
+            if(pffeCreated == false){
+                feTable = $('#feTable').DataTable({
+                               "columnDefs": [
+                              { "width": "40%", "targets": 0 }
+                            ],
+                          "ordering": true,
+                               "ajax": "json/progFaculty(1-10).json",
+                               "columns":[  
+                                   {"data":"program title"},
+                                   {"data":"award level"},  //must be the keys in the objects
+                                   {"data":"code"}, 
+                               ],
+                  
+                            });
+                pffeCreated = true;
+            }
+            if(pfflCreated == false){
+                flTable = $('#flTable').DataTable({
+                               "columnDefs": [
+                              { "width": "40%", "targets": 0 }
+                            ],
+                          "ordering": true,
+                               "ajax": "json/progFaculty(1-10).json",
+                               "columns":[  
+                                   {"data":"program title"},
+                                   {"data":"award level"},  //must be the keys in the objects
+                                   {"data":"code"}, 
+                               ],
+                  
+                            });
+                pfflCreated = true;
+            }
+            if(pffmCreated == false){
+                fmTable = $('#fmTable').DataTable({
+                               "columnDefs": [
+                              { "width": "40%", "targets": 0 }
+                            ],
+                          "ordering": true,
+                               "ajax": "json/progFaculty(1-10).json",
+                               "columns":[  
+                                   {"data":"program title"},
+                                   {"data":"award level"},  //must be the keys in the objects
+                                   {"data":"code"}, 
+                               ],
+                  
+                            });
+                pffmCreated = true;
+            }
+            if(pffsCreated == false){
+                fsTable = $('#fsTable').DataTable({
+                               "columnDefs": [
+                              { "width": "40%", "targets": 0 }
+                            ],
+                          "ordering": true,
+                               "ajax": "json/progFaculty(1-10).json",
+                               "columns":[  
+                                   {"data":"program title"},
+                                   {"data":"award level"},  //must be the keys in the objects
+                                   {"data":"code"}, 
+                               ],
+                  
+                            });
+                pffsCreated = true;
+            }
+            if(pfubsCreated == false){
+                ubsTable = $('#ubsTable').DataTable({
+                               "columnDefs": [
+                              { "width": "40%", "targets": 0 }
+                            ],
+                          "ordering": true,
+                               "ajax": "json/progFaculty(1-10).json",
+                               "columns":[  
+                                   {"data":"program title"},
+                                   {"data":"award level"},  //must be the keys in the objects
+                                   {"data":"code"}, 
+                               ],
+                  
+                            });
+                pfubsCreated = true;
+            }
+            if(pfadfaCreated == false){
+                adfaTable = $('#adfaTable').DataTable({
+                               "columnDefs": [
+                              { "width": "40%", "targets": 0 }
+                            ],
+                          "ordering": true,
+                               "ajax": "json/progFaculty(1-10).json",
+                               "columns":[  
+                                   {"data":"program title"},
+                                   {"data":"award level"},  //must be the keys in the objects
+                                   {"data":"code"}, 
+                               ],
+                  
+                            });
+                pfadfaCreated = true;
+            }
+
+         });
    }
+
    $scope.cAZ = function(){
    	   $scope.cslFlags.pAZFlag = false;
    	   $scope.cslFlags.pFFlag = false;
@@ -71,6 +250,25 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags){
    	   $scope.cslFlags.fsFlag = false;
    	   $scope.cslFlags.ctFlag = false;
    	   $scope.cslFlags.gglossaryFlag = false;
+
+         $(document).ready(function() {
+            if(cAZCreated == false){
+                   cAZTable = $('#cAZTable').DataTable({
+                                  "columnDefs": [
+                                 { "width": "40%", "targets": 0 }
+                               ],
+                             "ordering": true,
+                                  "ajax": "json/coursesAZ.json",
+                                  "columns":[  
+                                      {"data":"code"},
+                                      {"data":"course title"},  //must be the keys in the objects
+                                      {"data":"uoc"}, 
+                                  ],
+                     
+                               });
+                   cAZCreated = true;
+               }
+         });
    }
    $scope.csa = function(){
    	   $scope.cslFlags.pAZFlag = false;
@@ -84,6 +282,23 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags){
    	   $scope.cslFlags.fsFlag = false;
    	   $scope.cslFlags.ctFlag = false;
    	   $scope.cslFlags.gglossaryFlag = false;
+
+         $(document).ready(function() {
+            if(csaCreated == false){
+                   csaTable = $('#csaTable').DataTable({
+                                  "columnDefs": [
+                                 { "width": "40%", "targets": 0 }
+                               ],
+                             "ordering": true,
+                                  "ajax": "json/csa.json",
+                                  "columns":[  
+                                      {"data":"subject area"},
+                                  ],
+                     
+                               });
+                   csaCreated = true;
+               }
+         });
    }
    $scope.sAZ = function(){
    	   $scope.cslFlags.pAZFlag = false;

@@ -1,0 +1,44 @@
+{
+   "data":[
+   {
+      "code":"ACCT4794",
+      "course title":"Thesis (Accounting)",
+      "uoc":"24"
+   },
+    {
+      "code":"COMP1911",
+      "course title":"Computing 1A",
+      "uoc":"6"
+   },
+    {
+      "code":"COMP3441",
+      "course title":"Security Engineering",
+      "uoc":"6"
+   },
+    {
+      "code":"GENC7003",
+      "course title":"Getting into Bussines",
+      "uoc":"6"
+   },
+    {
+      "code":"GMAT4400",
+      "course title":"Land Management & Development Project 1",
+      "uoc":"6"
+   },
+    {
+      "code":"SENG4921",
+      "course title":"Professional Issues and Ethics",
+      "uoc":"6"
+   },
+    {
+      "code":"SOLA3507",
+      "course title":"Solar Cells",
+      "uoc":"6"
+   },
+    {
+      "code":"ZBUS2302",
+      "course title":"Leadership",
+      "uoc":"6"
+   }
+   ]	
+}

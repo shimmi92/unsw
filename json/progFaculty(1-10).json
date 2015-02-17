@@ -1,0 +1,49 @@
+{
+  "data":[{
+    "program title":"Arts",
+    "award level":"Bachelor Degree (Pass)",
+    "code":"3403"
+  },
+  {   
+    "program title":"Bioinformatics",
+    "award level":"Bachelor Degree (Pass)",
+    "code":"3647"
+  },
+  {
+    "program title":"Chemical Engineering  ",
+    "award level":"Bachelor Degree (Pass)",
+    "code":"3040"
+  },
+  {
+    "program title":"Digital Media",
+    "award level":"Bachelor Degree (Pass)",
+    "code":"4810"
+  },
+  {
+    "program title":"Economics ",
+    "award level":"Bachelor Degree (Pass)",
+    "code":"3543"
+  },
+  {
+    "program title":"Food Science",
+    "award level":"Bachelor Degree (Honours)",
+    "code":"3065"
+  },
+  {
+    "program title":"Mechanical Eng (Hons) (CDF)",
+    "award level":"Bachelor Degree (Honours)",
+    "code":"4478"
+  },
+  {
+    "program title":"Optometry/Science",
+    "award level":"Bachelor Degree (Pass)",
+    "code":"3952"
+  },
+  {
+    "program title":"Telecommunications",
+    "award level":"Bachelor Degree (Pass)",
+    "code":"3643"
+  }
+  ]
+
+}

@@ -1,1 +1,1 @@
-angular.module('Control', ['ngRoute']);
+angular.module('Control', ['ngRoute','ui.bootstrap']);

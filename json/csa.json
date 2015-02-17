@@ -1,0 +1,28 @@
+{
+   "data":[
+   {
+      "subject area":"ACCT: Accounting"
+   },
+    {
+      "subject area":"COMP: Computer Science"
+   },
+    {
+      "subject area":"BIOT: Biotechnology"
+   },
+    {
+      "subject area":"COMM: Commerce"
+   },
+    {
+      "subject area":"ECON: Economics"
+   },
+    {
+      "subject area":"GENL: General Education - Faculty of Law"
+   },
+    {
+      "subject area":"MATH: Mathematics"
+   },
+    {
+      "subject area":"SCOM: Science Communication"
+   }
+   ]	
+}
