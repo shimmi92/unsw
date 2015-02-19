@@ -43,40 +43,43 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
       if(pAZCreated == false){
           sendQuery.send().
              success(function(data, status, headers, config) {
-                 
+              console.log('successfully sent php');
+                $(document).ready(function() {
+                  //initialises the datatable from the json object
+                      pAZTable = $('#pAZTable').DataTable({
+                                     "columnDefs": [
+                                    { "width": "40%", "targets": 0 }
+                                  ],
+                                "ordering": true,
+                                     "ajax": "json/programsAZ.json",
+                                     "columns":[  
+                                         {"data":"program title"},
+                                         {"data":"award level"},  //must be the keys in the objects
+                                         {"data":"code"}, 
+                                         {"data":"faculty"}
+                                     ],
+                        
+                                  });
+                
+               })
+              pAZTable.on( 'click', 'tr', function () {
+                  $(this).toggleClass('selected');
+                  var data = pAZTable.row( this ).data();
+                  console.log(data);
+                  
+              })
 
-           console.log('successfully sent php');
 
-              $(document).ready(function() {
-                //initialises the datatable from the json object
 
-                 
-                    pAZTable1 = $('#pAZTable').DataTable({
-                                   "columnDefs": [
-                                  { "width": "40%", "targets": 0 }
-                                ],
-                              "ordering": true,
-                                   "ajax": "json/programsAZ.json",
-                                   "columns":[  
-                                       {"data":"program title"},
-                                       {"data":"award level"},  //must be the keys in the objects
-                                       {"data":"code"}, 
-                                       {"data":"faculty"}
-                                   ],
-                      
-                                });
-              
-             });
-           }).
-            error(function(data, status, headers, config) {
+
+            }). error(function(data, status, headers, config) {
               console.log('couldnt send request top php');
-          
-            });
+            })
           pAZCreated = true;
       }
 
 
-   }
+   };
    $scope.pF = function(){
    	   $scope.cslFlags.pAZFlag = false;
    	   $scope.cslFlags.pFFlag = true;
