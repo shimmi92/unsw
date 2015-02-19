@@ -55,7 +55,7 @@ app.factory('quickLinkFlags', function ($rootScope){
       console.log('calledsend');
        return $http({
             method: "post",
-            url: "programsAZ.php",
+            url: "php/programsAZ.php",
             data: {
                "query":"programsAZ"
             },
