@@ -1,4 +1,9 @@
 <?php
+
+$postdata = file_get_contents("php://input");
+$request = json_decode($postdata);
+@$query = $request->query;
+
    $host        = "host=127.0.0.1";
    $port        = "port=5432";
    $dbname      = "dbname=unsw";
@@ -36,7 +41,7 @@ $stuff = array("data" => $allelements);
 
 $data = json_encode($stuff);
 
-$myFile = "json/programsAZ.json";
+$myFile = "json/$query.json";
 $fh = fopen($myFile, 'w') or die("can't open file");
 fwrite($fh, $data);
 fclose($fh)
