@@ -47,4 +47,23 @@ app.factory('quickLinkFlags', function ($rootScope){
          return vars;
 
  })
+.factory('sendQuery',['$http', function($http,authInfo,globalVars){
+     
+     var sendQuery = {};
+
+     sendQuery.send = function(){
+      console.log('calledsend');
+       return $http({
+            method: "post",
+            url: "programsAZ.php",
+            data: {
+               "query":"programsAZ"
+            },
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+ 
+     };
+
+     return sendQuery;
+}])
 ;
