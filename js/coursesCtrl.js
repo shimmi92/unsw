@@ -23,6 +23,8 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
     var csaCreated = false;
     //
     var sAZCreated = false;
+    
+
 
    //controllers for button clicks ot div elements
    //displays the div for programs A-Z
@@ -62,15 +64,23 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
                                   });
                 
                })
+              //  pAZTable.on( 'click', 'tr', function () {
+              //     if ( $(this).hasClass('selected') ) {
+              //         $(this).removeClass('selected');
+              //     }
+              //     else {
+              //         pAZTable.$('tr.selected').removeClass('selected');
+              //         $(this).addClass('selected');
+              //     }
+              // } );
               pAZTable.on( 'click', 'tr', function () {
-                  $(this).toggleClass('selected');
-                  var data = pAZTable.row( this ).data();
-                  console.log(data);
-                  
+                
+                $scope.cslFlags.clickedData = pAZTable.row( this ).data();
+                 $("#select").trigger("click"); 
               })
 
 
-
+  
 
             }). error(function(data, status, headers, config) {
               console.log('couldnt send request top php');

@@ -8,5 +8,6 @@ app.config(function ($routeProvider) {
             when('/library', {templateUrl: 'partials/library.html', controller: 'libraryCtrl'}).
             when('/quickLinks', {templateUrl: 'partials/quickLinks.html', controller: 'quickLinksCtrl'}).
             when('/courses', {templateUrl: 'partials/courses.html', controller: 'coursesCtrl'}).
+             when('/courseSelected', {templateUrl: 'partials/courseSelected.html', controller: 'courseSelectedCtrl'}).
             otherwise({redirectTo: '/home'});
     });

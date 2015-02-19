@@ -17,6 +17,7 @@ app.factory('quickLinkFlags', function ($rootScope){
          return vars;
 
  })
+//factory to hold the values that control the divs on course page
 .factory('courseSelectionFLags', function ($rootScope){
          var vars = $rootScope.$new(true);
          vars.data = {
@@ -30,12 +31,14 @@ app.factory('quickLinkFlags', function ($rootScope){
                grsiFlag:false,
                fsFlag:false,
                ctFlag:false,
-               glossaryFlag:false
+               glossaryFlag:false,
+               clickedData:undefined
 
                       }
          return vars;
 
  })
+//factory for psotggrad or undergrad or...
 .factory('studyTypeFlags', function ($rootScope){
          var vars = $rootScope.$new(true);
          vars.data = {
@@ -47,6 +50,7 @@ app.factory('quickLinkFlags', function ($rootScope){
          return vars;
 
  })
+//factory to connect to database
 .factory('sendQuery',['$http', function($http,authInfo,globalVars){
      
      var sendQuery = {};
