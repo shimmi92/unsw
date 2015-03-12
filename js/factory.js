@@ -38,6 +38,33 @@ app.factory('quickLinkFlags', function ($rootScope){
          return vars;
 
  })
+//holds instances of tables
+.factory('tablesCreated', function ($rootScope){
+         var vars = $rootScope.$new(true);
+         vars.data = {
+                  pAZCreated : false,
+                     //tables for programs by faculty
+                  pfdbsCreated : false,
+                  pffadCreated : false,
+                  pffasCreated : false,
+                  pffbeCreated : false,
+                  pffeCreated : false,
+                  pfflCreated : false,
+                  pffmCreated : false,
+                  pffsCreated : false,
+                  pfubsCreated : false,
+                  pfadfaCreated : false,
+                  //
+                  cAZCreated : false,
+                  //
+                  csaCreated : false,
+                  //
+                  sAZCreated : false,
+
+                      }
+         return vars;
+
+ })
 //factory for psotggrad or undergrad or...
 .factory('studyTypeFlags', function ($rootScope){
          var vars = $rootScope.$new(true);
@@ -55,7 +82,7 @@ app.factory('quickLinkFlags', function ($rootScope){
      
      var sendQuery = {};
 
-     sendQuery.send = function(){
+     sendQuery.sendPAZ = function(){
       console.log('calledsend');
        return $http({
             method: "post",
@@ -68,6 +95,20 @@ app.factory('quickLinkFlags', function ($rootScope){
  
      };
 
+     sendQuery.sendCAZ = function(){
+      console.log('calledsend');
+       return $http({
+            method: "post",
+            url: "php/coursesAZ.php",
+            data: {
+               "query":"coursesAZ"
+            },
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+ 
+     };
+
      return sendQuery;
 }])
+
 ;

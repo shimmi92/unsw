@@ -1,28 +1,29 @@
 var app = angular.module('Control');
-app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFlags,sendQuery){
+app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFlags,tablesCreated,sendQuery){
    $scope.cslFlags = courseSelectionFLags.data;
    $scope.stf = studyTypeFlags.data;
 
    console.log($scope.stf.undergraduateFlag);
     //global variable that ensures each table is only created once
-    var pAZCreated = false;
-       //tables for programs by faculty
-    var pfdbsCreated = false;
-    var pffadCreated = false;
-    var pffasCreated = false;
-    var pffbeCreated = false;
-    var pffeCreated = false;
-    var pfflCreated = false;
-    var pffmCreated = false;
-    var pffsCreated = false;
-    var pfubsCreated = false;
-    var pfadfaCreated = false;
-    //
-    var cAZCreated = false;
-    //
-    var csaCreated = false;
-    //
-    var sAZCreated = false;
+    $scope.tables=tablesCreated.data;
+    // var pAZCreated = false;
+    //    //tables for programs by faculty
+    // var pfdbsCreated = false;
+    // var pffadCreated = false;
+    // var pffasCreated = false;
+    // var pffbeCreated = false;
+    // var pffeCreated = false;
+    // var pfflCreated = false;
+    // var pffmCreated = false;
+    // var pffsCreated = false;
+    // var pfubsCreated = false;
+    // var pfadfaCreated = false;
+    // //
+    // var cAZCreated = false;
+    // //
+    // var csaCreated = false;
+    // //
+    // var sAZCreated = false;
     
 
 
@@ -42,8 +43,8 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
    	   $scope.cslFlags.gglossaryFlag = false;
    // check the flag for postgrad,undergrad... then send the correct reposne to php to query the database and create 
    //relevant json object to load into datatable
-      if(pAZCreated == false){
-          sendQuery.send().
+      if($scope.tables.pAZCreated == false){
+          sendQuery.sendPAZ().
              success(function(data, status, headers, config) {
               console.log('successfully sent php');
                 $(document).ready(function() {
@@ -55,10 +56,10 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
                                 "ordering": true,
                                      "ajax": "json/programsAZ.json",
                                      "columns":[  
-                                         {"data":"program title"},
-                                         {"data":"award level"},  //must be the keys in the objects
+                                         {"data":"name"},
+                                         {"data":"career"},  //must be the keys in the objects
                                          {"data":"code"}, 
-                                         {"data":"faculty"}
+                                         {"data":"ouname"}
                                      ],
                         
                                   });
@@ -85,7 +86,7 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
             }). error(function(data, status, headers, config) {
               console.log('couldnt send request top php');
             })
-          pAZCreated = true;
+          $scope.tables.pAZCreated = true;
       }
 
 
@@ -106,7 +107,7 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
          $(document).ready(function() {
         //initialises the datatables from the json objects created from php database query only once
 
-             if(pfdbsCreated == false){
+             if($scope.tables.pfdbsCreated == false){
                 dbsTable = $('#dbsTable').DataTable({
                                "columnDefs": [
                               { "width": "40%", "targets": 0 }
@@ -120,9 +121,9 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
                                ],
                   
                             });
-                pfdbsCreated = true;
+                $scope.tables.pfdbsCreated = true;
             }
-            if(pffadCreated == false){
+            if($scope.tables.pffadCreated == false){
                 fadTable = $('#fadTable').DataTable({
                                "columnDefs": [
                               { "width": "40%", "targets": 0 }
@@ -136,9 +137,9 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
                                ],
                   
                             });
-                pffadCreated = true;
+                $scope.tables.pffadCreated = true;
             }
-            if(pffasCreated == false){
+            if($scope.tables.pffasCreated == false){
                 fasTable = $('#fasTable').DataTable({
                                "columnDefs": [
                               { "width": "40%", "targets": 0 }
@@ -152,9 +153,9 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
                                ],
                   
                             });
-                pffasCreated = true;
+                $scope.tables.pffasCreated = true;
             }
-            if(pffbeCreated == false){
+            if($scope.tables.pffbeCreated == false){
                 fbeTable = $('#fbeTable').DataTable({
                                "columnDefs": [
                               { "width": "40%", "targets": 0 }
@@ -168,9 +169,9 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
                                ],
                   
                             });
-                pffbeCreated = true;
+                $scope.tables.pffbeCreated = true;
             }
-            if(pffeCreated == false){
+            if($scope.tables.pffeCreated == false){
                 feTable = $('#feTable').DataTable({
                                "columnDefs": [
                               { "width": "40%", "targets": 0 }
@@ -184,9 +185,9 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
                                ],
                   
                             });
-                pffeCreated = true;
+                $scope.tables.pffeCreated = true;
             }
-            if(pfflCreated == false){
+            if($scope.tables.pfflCreated == false){
                 flTable = $('#flTable').DataTable({
                                "columnDefs": [
                               { "width": "40%", "targets": 0 }
@@ -200,9 +201,9 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
                                ],
                   
                             });
-                pfflCreated = true;
+                $scope.tables.pfflCreated = true;
             }
-            if(pffmCreated == false){
+            if($scope.tables.pffmCreated == false){
                 fmTable = $('#fmTable').DataTable({
                                "columnDefs": [
                               { "width": "40%", "targets": 0 }
@@ -216,9 +217,9 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
                                ],
                   
                             });
-                pffmCreated = true;
+                $scope.tables.pffmCreated = true;
             }
-            if(pffsCreated == false){
+            if($scope.tables.pffsCreated == false){
                 fsTable = $('#fsTable').DataTable({
                                "columnDefs": [
                               { "width": "40%", "targets": 0 }
@@ -232,9 +233,9 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
                                ],
                   
                             });
-                pffsCreated = true;
+                $scope.tables.pffsCreated = true;
             }
-            if(pfubsCreated == false){
+            if($scope.tables.pfubsCreated == false){
                 ubsTable = $('#ubsTable').DataTable({
                                "columnDefs": [
                               { "width": "40%", "targets": 0 }
@@ -248,9 +249,9 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
                                ],
                   
                             });
-                pfubsCreated = true;
+                $scope.tables.pfubsCreated = true;
             }
-            if(pfadfaCreated == false){
+            if($scope.tables.pfadfaCreated == false){
                 adfaTable = $('#adfaTable').DataTable({
                                "columnDefs": [
                               { "width": "40%", "targets": 0 }
@@ -264,7 +265,7 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
                                ],
                   
                             });
-                pfadfaCreated = true;
+                $scope.tables.pfadfaCreated = true;
             }
 
          });
@@ -284,8 +285,13 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
    	   $scope.cslFlags.gglossaryFlag = false;
 
          $(document).ready(function() {
-            if(cAZCreated == false){
-                   cAZTable = $('#cAZTable').DataTable({
+            if($scope.tables.cAZCreated == false){
+             sendQuery.sendCAZ().
+             success(function(data, status, headers, config) {
+              console.log('successfully sent php');
+                $(document).ready(function() {
+                  //initialises the datatable from the json object
+                       cAZTable = $('#cAZTable').DataTable({
                                   "columnDefs": [
                                  { "width": "40%", "targets": 0 }
                                ],
@@ -298,8 +304,24 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
                                   ],
                      
                                });
-                   cAZCreated = true;
-               }
+                
+               })
+
+              cAZTable.on( 'click', 'tr', function () {
+                
+                $scope.cslFlags.clickedData = cAZTable.row( this ).data();
+                 $("#select").trigger("click"); 
+              })
+
+
+  
+
+            }). error(function(data, status, headers, config) {
+              console.log('couldnt send request top php');
+            })
+          $scope.tables.cAZCreated = true;
+      }
+
          });
    }
    $scope.csa = function(){
@@ -316,7 +338,7 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
    	   $scope.cslFlags.gglossaryFlag = false;
 
          $(document).ready(function() {
-            if(csaCreated == false){
+            if($scope.tables.csaCreated == false){
                    csaTable = $('#csaTable').DataTable({
                                   "columnDefs": [
                                  { "width": "40%", "targets": 0 }
@@ -328,7 +350,7 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
                                   ],
                      
                                });
-                   csaCreated = true;
+                   $scope.tables.csaCreated = true;
                }
          });
    }
@@ -346,7 +368,7 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
    	   $scope.cslFlags.gglossaryFlag = false;
 
          $(document).ready(function() {
-            if(sAZCreated == false){
+            if($scope.tables.sAZCreated == false){
                    sAZTable = $('#sAZTable').DataTable({
                                   "columnDefs": [
                                  { "width": "40%", "targets": 0 }
@@ -359,7 +381,7 @@ app.controller('coursesCtrl', function ($scope,courseSelectionFLags,studyTypeFla
                                   ],
                      
                                });
-                   sAZCreated = true;
+                   $scope.tables.sAZCreated = true;
                }
          });
    }
