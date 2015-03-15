@@ -38,6 +38,16 @@ app.factory('quickLinkFlags', function ($rootScope){
          return vars;
 
  })
+//holds the value for the study level selected
+.factory('studyLevel', function ($rootScope){
+         var vars = $rootScope.$new(true);
+         vars.data = {
+                selectedStudyLevel: ""
+
+                      }
+         return vars;
+
+ })
 //holds instances of tables
 .factory('tablesCreated', function ($rootScope){
          var vars = $rootScope.$new(true);
@@ -78,17 +88,20 @@ app.factory('quickLinkFlags', function ($rootScope){
 
  })
 //factory to connect to database
-.factory('sendQuery',['$http', function($http,authInfo,globalVars){
+.factory('sendQuery',['$http','studyLevel', function($http,studyLevel){
      
      var sendQuery = {};
-
+    
      sendQuery.sendPAZ = function(){
+        console.log(studyLevel.data.selectedStudyLevel);
       console.log('calledsend');
        return $http({
             method: "post",
             url: "php/programsAZ.php",
             data: {
-               "query":"programsAZ"
+               "query":"programsAZ",
+               "SL":studyLevel.data.selectedStudyLevel, 
+
             },
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
         });
@@ -101,12 +114,37 @@ app.factory('quickLinkFlags', function ($rootScope){
             method: "post",
             url: "php/coursesAZ.php",
             data: {
-               "query":"coursesAZ"
+               "query":"coursesAZ",
+               "SL":studyLevel.data.selectedStudyLevel,
             },
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
         });
  
      };
+     sendQuery.sendFaculty = function(){
+      console.log('calledsendfaculty');
+       return $http({
+            method: "post",
+            url: "php/programsFaculty.php",
+            data: {
+               "query1":"dbs",
+               "query2":"fad",
+               "query3":"fas",
+               "query4":"fbe",
+               "query5":"fe",
+               "query6":"fl",
+               "query7":"fm",
+               "query8":"fs",
+               "query9":"ubs",
+               "query10":"adfa",
+               "SL":studyLevel.data.selectedStudyLevel,
+
+            },
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+ 
+     };
+     
 
      return sendQuery;
 }])

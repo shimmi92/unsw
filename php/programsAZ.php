@@ -3,7 +3,8 @@
 $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 @$query = $request->query;
-
+@$SL = $request->SL;
+echo $SL;
    $host        = "host=127.0.0.1";
    $port        = "port=5432";
    $dbname      = "dbname=handbook";
@@ -16,7 +17,7 @@ $request = json_decode($postdata);
       echo "Opened database successfully\n";
    }
 
-   $result = pg_query($db, "SELECT name,career,code,ouname from active_objects where rtype = 'PR' and career = 'UG'");
+   $result = pg_query($db, "SELECT name,career,code,award_name from program_az_award where rtype = 'PR' and career = '$SL'");
 if (!$result) {
   echo "An error occurred.\n";
   exit;

@@ -28,89 +28,31 @@
 }
 </style>
 
-    	<div class="row clearfix">
-			<div class="col-md-8 column col-md-offset-2">
-			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="2000">
-				  <!-- Indicators -->
-				  <ol class="carousel-indicators">
-				    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-				    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-				  </ol>
-
-				  <!-- Wrapper for slides -->
-				  <div class="carousel-inner">
-				    <div class="item active">
-				      <img src="images/unsw1.jpg" alt="...">
-				      <div class="carousel-caption">
-				      	
-				      </div>
-				    </div>
-				    <div class="item">
-				      <img src="images/unsw2.jpg" alt="...">
-				      <div class="carousel-caption">
-				      	
-				      </div>
-				    </div>
-				    <div class="item">
-				      <img src="images/unsw3.jpg" alt="...">
-				      <div class="carousel-caption">
-				      	
-				      </div>
-				    </div>
-				  </div>
-
-				  <!-- Controls -->
-				  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-				    <span class="glyphicon glyphicon-chevron-left"></span>
-				  </a>
-				  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-				    <span class="glyphicon glyphicon-chevron-right"></span>
-				  </a>
-				</div> <!-- Carousel -->
-              </div>
-            </div>
-
-				<!-- end row -->
-			</div>
-    <br>
-	<div class="row clearfix">
-
-  			 <div class="col-md-12 column">
-  			    <!-- start of panel -->
-               <div class="col-md-3 column">
-					<div class="panel panel-warning">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								Undergraduate Study
-							</h3>
-						</div>
-						<div class="panel-body">
-						   <div class="panel-heading">
-                                  <h3 class="panel-title">For:</h3>
-                            </div>
-                                 <ul class="list-unstyled icon-list chevron-right">
-						  				<li>future UG students</li>
-						  				<li> current UG students</li>
-						  				
-									</ul>
-								<a href="#/courses" ng-click="undergrad()" type="button" class="btn btn-warning btn-lg centered">
-								  <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Star
-								</a>
-						</div>
-
-						
-					</div>
-					<!-- panel ends -->
-				</div>
-				<div class="col-md-3 column">
-					<div class="panel panel-success">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								Postgraduate Coursework Study
-							</h3>
-						</div>
-						<div class="panel-body">
+    	
+	
+             <br>
+  			 <div class="col-md-3 column">
+  		       Select The right level for You: <br><br>
+               <accordion close-others="oneAtATime">
+		              <accordion-group is-open="status1.open">
+		                <accordion-heading>
+		                   Undergraduate Study  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status1.open, 'glyphicon-chevron-up': status1.open}"></i>
+		                </accordion-heading>
+		                         <div class="panel-heading">
+		                                  <h3 class="panel-title">For:</h3>
+		                           </div>
+		                     <ul class="list-unstyled icon-list chevron-right">
+			                      <li>future UG students</li>
+			                      <li> current UG students</li>
+		                     </ul>
+		                <a href="#/courses" ng-click="undergrad()" type="button" class="btn btn-warning btn-lg centered">
+		                  <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Go
+		                </a>
+		              </accordion-group>
+		              <accordion-group is-open="status2.open">
+		                <accordion-heading>
+		                    Postgraduate Coursework Study <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status2.open, 'glyphicon-chevron-up': status2.open}"></i>
+		                </accordion-heading>
 							<div class="panel-heading">
                                   <h3 class="panel-title">For students who:</h3>
                             </div>    
@@ -118,64 +60,61 @@
 						  		     <li> have completed a UG degree and are interested in PG coursework mode</li>			  				
 								</ul>
 								<a type="button" href="#/courses" ng-click="postgrad()" class="btn btn-success btn-lg centered">
-								  <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Star
+								  <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> go
 								</a>
-						</div>
-						
-					</div>
-				</div>
-				<!-- separator -->
-				<div class="col-md-3 column">
-					<div class="panel panel-info">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								Postgraduate Research Study
-							</h3>
-						</div>
-						<div class="panel-body">
-							<div class="panel-heading">
+		            </accordion-group>
+		              <accordion-group is-open="status3.open">
+		                <accordion-heading>
+		                    Postgraduate Research <br> Study <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status3.open, 'glyphicon-chevron-up': status3.open}"></i>
+		                </accordion-heading>
+                            <div class="panel-heading">
                                   <h3 class="panel-title">For students who:</h3>
                             </div>
                                  <ul class="list-unstyled icon-list chevron-right">
 						  		     <li> have completed a UG degree and are interested in PG research mode</li>			  				
 								</ul>
 								<a href="#/courses" ng-click="postGradRes()" type="button" class="btn btn-info btn-lg centered">
-								  <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Star
+								  <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> go
 								</a>
-						</div>
-						
-					</div>
-				</div>
-				<!-- separator -->
-				<div class="col-md-3 column">
-					<div class="panel panel-danger">
-						<div class="panel-heading">
-							<h3 class="panel-title">
-								Non-Award Study
-							</h3>
-						</div>
-						<div class="panel-body">
-							<div class="panel-heading">
+		            </accordion-group>
+		             <accordion-group is-open="status4.open">
+		                <accordion-heading>
+		                    Non-Award Study  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status4.open, 'glyphicon-chevron-up': status4.open}"></i>
+		                </accordion-heading>
+		                 <div class="panel-heading">
                                   <h3 class="panel-title">For students who:</h3>
                             </div>
                                   <ul class="list-unstyled icon-list chevron-right">
 						  		     <li> wish to study without award of a formal degree, diploma or certificate</li>			  				
 								</ul>
 								<a href="#/courses" ng-click="nonAward()" type="button" class="btn btn-danger btn-lg centered">
-								  <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> Star
+								  <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> go
 								</a>
-                        </div>
-					</div>
-				</div>
+		            </accordion-group>
+		            
+		          </accordion>
+
   
             <!-- end of column -->
 			</div> 
 
-	</div>
 
+            <div class="col-md-5">
+                 At UNSW Australia we develop leaders who shape the future. We’re a powerhouse of cutting-edge research and teaching in the Asia-Pacific. Our students benefit from a diverse and innovative learning experience and our graduates are highly sought after by employers globally.
+                 <br>
+                 <br>
 
-			<div class="row clearfix">
-				<div class="col-md-6 column col-md-offset-3">
+                 UNSW is a powerhouse of cutting-edge research and teaching in the Asia-Pacific
+
+    The University is ranked 48th in the QS World University Rankings 2014.
+    Australia’s most innovative university at the 2012 Thomson Reuters Citation and Innovation Awards.
+    Top research university in NSW and fourth nationally in the Excellence in Research for Australia report.
+    UNSW is a member of the prestigious Group of Eight - a coalition of Australia's leading research intensive universities.
+    We are the only Australian university invited to join the prestigious Global Alliance of Technological Universities.
+            </div>
+ <!-- search bar starts here -->
+            <div class="col-md-4">
+
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<h3 class="panel-title">
@@ -208,25 +147,44 @@
 			                   </div>
 			                   <div class="row">
 			                     <br>
-							       <div class="form-group">                
+							       <div class="form-group">   
+
 					                 <label class="control-label col-sm-3" for="studyLevel"> Word/Phrase: </label>
 					                 <div class="col-sm-6">			                    
 					                     <input type="text" class="form-control">
 
 					                </div>
-					                <div class="col-sm-3">	
-					                  <button type="button" class="btn btn-primary">Search</button>
-					                </div>
+
 					                
 					            </div>
 			                   </div>
-			                 
+			                   <div class="row">
+					                <div class="col-sm-3">	
+					                  <button type="button" class="btn btn-primary">Search</button>
+					                </div>
+			                   </div>
 			                 </form>          	
 			            
 						</div>
 						
 					</div>
-				</div>
+
+
+
+
+
+
+				</div> 	
+
+    
+
+
+  <!-- end of first row -->
+	
+
+
+			<div class="row clearfix">
+		
            <!-- end row -->
          </div>
 

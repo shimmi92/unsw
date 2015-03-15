@@ -1,9 +1,9 @@
 var app = angular.module('Control');
-app.controller('homeCtrl', function ($scope,quickLinkFlags,studyTypeFlags){
+app.controller('homeCtrl', function ($scope,quickLinkFlags,studyTypeFlags,studyLevel){
    //holds the quickLinkFlags service
    $scope.qL = quickLinkFlags.data;
    $scope.stf = studyTypeFlags.data;
-
+   $scope.SL = studyLevel.data;
    $scope.duaRedirect = function(){
    	   $scope.qL.duaFlag = true;
    	   $scope.qL.moodleFlag = false;
@@ -145,12 +145,14 @@ app.controller('homeCtrl', function ($scope,quickLinkFlags,studyTypeFlags){
       $scope.stf.nonAwardFlag=false;
    }
    $scope.undergrad = function(){
+      $scope.SL.selectedStudyLevel = "UG";
       $scope.stf.undergraduateFlag=true;
       $scope.stf.postgraduateFlag=false;
       $scope.stf.postgraduateResearchFlag=false;
-      $scope.stf.nonAwardFlag=false
+      $scope.stf.nonAwardFlag=false;
    }
    $scope.postgrad = function(){
+      $scope.SL.selectedStudyLevel = "PG";
       $scope.stf.undergraduateFlag=false;
       $scope.stf.postgraduateFlag=true;
       $scope.stf.postgraduateResearchFlag=false;
