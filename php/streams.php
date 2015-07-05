@@ -4,20 +4,20 @@ $postdata = file_get_contents("php://input");
 $request = json_decode($postdata);
 @$query = $request->query;
 @$SL = $request->SL;
+echo $SL;
    $host        = "host=127.0.0.1";
    $port        = "port=5432";
    $dbname      = "dbname=handbook";
    $credentials = "user=postgres password=postgres";
 
-  $db = pg_connect( "$host $port $dbname $credentials"  );
-  // $db = pg_connect( "$dbname" );
+   $db = pg_connect( "$host $port $dbname $credentials"  );
    if(!$db){
       echo "Error : Unable to open database\n";
    } else {
       echo "Opened database successfully\n";
    }
 
-   $result = pg_query($db, "SELECT code,name,uoc from courses_az where rtype = 'CS' and career = '$SL'");
+   $result = pg_query($db, "SELECT name,career,rtype,code,ouname from active_objects where rtype = 'ST' and career = '$SL'");
 if (!$result) {
   echo "An error occurred.\n";
   exit;
@@ -28,8 +28,8 @@ if (!$result) {
 $allelements = array();
 //loop to get json format for datatables.
 while ($row = pg_fetch_row($result)) {
-
-  $temp = array("code"=>$row[0],"course title"=>$row[1],"uoc"=>$row[2]);
+  
+  $temp = array("name"=>$row[0],"career"=>$row[1],"rtype"=>$row[2],"code"=>$row[3],"ouname"=>$row[4]);
  
   array_push($allelements, $temp);
 

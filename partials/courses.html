@@ -9,10 +9,10 @@
 </div>
    <br>
 <div class="row">
-   <div class="col-md-3">
+   <!-- <div class="col-md-3">
                              <div class="panel panel-success">
                                 <div class="panel-heading">
-                                  <h3 class="panel-title">Shortcuts</h3>
+                                  <h3 class="panel-title">View By</h3>
                                 </div>
                                
                                  <div class="list-group">
@@ -34,10 +34,10 @@
                              </div>
 
    <!-- end col-3 -->
-   </div>
-   <div class="col-md-9">
+   </div> 
+   <div class="col-md-12">
    <!-- div for programs AZ -->
-      <div ng-show="cslFlags.pAZFlag">
+<!--       <div ng-show="cslFlags.pAZFlag">
          Programs AZ
           <div class="panel panel-success">
                 <div class="panel-body">
@@ -46,6 +46,7 @@
                          <thead>
                            <th>Program Title</th>
                            <th>Award Level</th>
+                           <th>Type</th>
                            <th>Code</th>
                            <th>Faculty</th>
                        
@@ -54,155 +55,65 @@
                   </div>
                 </div>
               </div> 
-      </div>
+      </div> -->
       <!-- div for programs by faculty -->
-       <div ng-show="cslFlags.pFFlag">
-         Programs by faculty
+       <div>
+         ALL
            <accordion close-others="oneAtATime">
               <accordion-group is-open="status1.open">
                 <accordion-heading>
-                   DVC (A) Board of Studies  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status1.open, 'glyphicon-chevron-up': status1.open}"></i>
+                   Programs  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status1.open, 'glyphicon-chevron-up': status1.open}"></i>
                 </accordion-heading>
                  <div class="table-responsive">
-                       <table id="dbsTable" class="display table .table-condensed">
+                      <table id="pAZTable" class="display table .table-condensed">
                          <thead>
                            <th>Program Title</th>
                            <th>Award Level</th>
-                           <th>Code</th>   
+                           <th>Type</th>
+                           <th>Code</th>
+                           <th>Faculty</th>
+                       
                          </thead>
                       </table>
                   </div> 
               </accordion-group>
-              <accordion-group is-open="status2.open">
-                <accordion-heading>
-                    Faculty of Art & Design <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status2.open, 'glyphicon-chevron-up': status2.open}"></i>
-                </accordion-heading>
-                <div class="table-responsive">
-                       <table id="fadTable" class="display table .table-condensed">
-                         <thead>
-                           <th>Program Title</th>
-                           <th>Award Level</th>
-                           <th>Code</th>   
-                         </thead>
-                      </table>
-                  </div> 
-            </accordion-group>
               <accordion-group is-open="status3.open">
                 <accordion-heading>
-                    Faculty of Arts & Social Sciences <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status3.open, 'glyphicon-chevron-up': status3.open}"></i>
+                    Streams <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status3.open, 'glyphicon-chevron-up': status3.open}"></i>
                 </accordion-heading>
                 <div class="table-responsive">
-                       <table id="fasTable" class="display table .table-condensed">
+                       <table id="STTable" class="display table .table-condensed">
                          <thead>
                            <th>Program Title</th>
                            <th>Award Level</th>
-                           <th>Code</th>   
+                           <th>Type</th>
+                           <th>Code</th>
+                           <th>Faculty</th>
+                       
                          </thead>
                       </table>
                   </div> 
             </accordion-group>
-             <accordion-group is-open="status4.open">
+              <accordion-group is-open="status2.open">
                 <accordion-heading>
-                    Faculty of Built Environment  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status4.open, 'glyphicon-chevron-up': status4.open}"></i>
+                    Courses <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status2.open, 'glyphicon-chevron-up': status2.open}"></i>
                 </accordion-heading>
                 <div class="table-responsive">
-                       <table id="fbeTable" class="display table .table-condensed">
+                       <table id="cAZTable" class="display table .table-condensed">
                          <thead>
-                           <th>Program Title</th>
-                           <th>Award Level</th>
-                           <th>Code</th>   
-                         </thead>
-                      </table>
-                  </div>  
-            </accordion-group>
-            <accordion-group is-open="status5.open">
-                <accordion-heading>
-                    Faculty of Engineering  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status5.open, 'glyphicon-chevron-up': status5.open}"></i>
-                </accordion-heading>
-                <div class="table-responsive">
-                       <table id="feTable" class="display table .table-condensed">
-                         <thead>
-                           <th>Program Title</th>
-                           <th>Award Level</th>
-                           <th>Code</th>   
-                         </thead>
-                      </table>
-                  </div>  
-            </accordion-group>
-            <accordion-group is-open="status6.open">
-                <accordion-heading>
-                    Faculty of Law  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status6.open, 'glyphicon-chevron-up': status6.open}"></i>
-                </accordion-heading>
-                <div class="table-responsive">
-                       <table id="flTable" class="display table .table-condensed">
-                         <thead>
-                           <th>Program Title</th>
-                           <th>Award Level</th>
-                           <th>Code</th>   
-                         </thead>
-                      </table>
-                  </div>  
-            </accordion-group>
-            <accordion-group is-open="status7.open">
-                <accordion-heading>
-                    Faculty of Medicine  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status7.open, 'glyphicon-chevron-up': status7.open}"></i>
-                </accordion-heading>
-                <div class="table-responsive">
-                       <table id="fmTable" class="display table .table-condensed">
-                         <thead>
-                           <th>Program Title</th>
-                           <th>Award Level</th>
-                           <th>Code</th>   
+                           <th>Code</th>
+                           <th>Course Title</th>
+                           <th>Units of Credit</th>
                          </thead>
                       </table>
                   </div> 
             </accordion-group>
-             <accordion-group is-open="status8.open">
-                <accordion-heading>
-                    Faculty of Science  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status8.open, 'glyphicon-chevron-up': status8.open}"></i>
-                </accordion-heading>
-                <div class="table-responsive">
-                       <table id="fsTable" class="display table .table-condensed">
-                         <thead>
-                           <th>Program Title</th>
-                           <th>Award Level</th>
-                           <th>Code</th>   
-                         </thead>
-                      </table>
-                  </div> 
-            </accordion-group>
-             <accordion-group is-open="status9.open">
-                <accordion-heading>
-                    UNSW Business School   <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status9.open, 'glyphicon-chevron-up': status9.open}"></i>
-                </accordion-heading>
-                <div class="table-responsive">
-                       <table id="ubsTable" class="display table .table-condensed">
-                         <thead>
-                           <th>Program Title</th>
-                           <th>Award Level</th>
-                           <th>Code</th>   
-                         </thead>
-                      </table>
-                  </div>  
-            </accordion-group>
-             <accordion-group is-open="status10.open">
-                <accordion-heading>
-                    UNSW Canberra at ADFA   <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !status10.open, 'glyphicon-chevron-up': status10.open}"></i>
-                </accordion-heading>
-                <div class="table-responsive">
-                       <table id="adfaTable" class="display table .table-condensed">
-                         <thead>
-                           <th>Program Title</th>
-                           <th>Award Level</th>
-                           <th>Code</th>   
-                         </thead>
-                      </table>
-                  </div> 
-            </accordion-group>
+      
+
           </accordion>
       </div>
     <!-- courses by AZ -->
-      <div ng-show="cslFlags.cAZFlag">
+     <!--  <div ng-show="cslFlags.cAZFlag">
          courses by AZ
           <div class="panel panel-success">
                 <div class="panel-body">
@@ -218,59 +129,11 @@
                 </div>
               </div> 
       </div>
-      <!-- courses by subject area -->
-       <div ng-show="cslFlags.csaFlag">
-         courses by subject area
-         <div ng-show="true">
-          <div class="panel panel-success">
-                <div class="panel-body">
-                   <div class="table-responsive">
-                       <table id="csaTable" class="display table .table-condensed">
-                         <thead>
-                           <th>Subject Area</th>
-                         </thead>
-                      </table>
-                  </div>
-                </div>
-              </div> 
-          </div>    
-      </div>
-      <!-- specialisation AZ -->
-       <div ng-show="cslFlags.sAZFlag">
-         Specialization AZ
-         <div class="panel panel-success">
-                <div class="panel-body">
-                   <div class="table-responsive">
-                       <table id="sAZTable" class="display table .table-condensed">
-                         <thead>
-                           <th>Specialisation</th>
-                           <th>Description</th>
-                         </thead>
-                      </table>
-                  </div>
-                </div>
-              </div> 
-      </div>
-       <div ng-show="cslFlags.aoiFlag">
-         area of interest
-      </div>
-       <div ng-show="cslFlags.careersFlag">
-         careers
-      </div>
-       <div ng-show="cslFlags.grsiFlag">
-         genereal rules and student info
-      </div>
-       <div ng-show="cslFlags.fsFlag">
-         faculty and schools
-      </div>
-       <div ng-show="cslFlags.ctFlag">
-         class and timetable
-      </div>
-       <div ng-show="cslFlags.glossaryFlag">
-         glosarry flag
-      </div>
+ -->
+      
 
-   <a id="select" href="#/courseSelected" ng-show="false">select<a>
+   <a id="selectCourse" href="#/courseSelected" ng-show="false">select<a>
+    <a id="selectProgram" href="#/programSelected" ng-show="false">select<a>
 
    <!-- end col-9 -->
    </div>

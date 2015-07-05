@@ -8,6 +8,9 @@ app.config(function ($routeProvider) {
             when('/library', {templateUrl: 'partials/library.html', controller: 'libraryCtrl'}).
             when('/quickLinks', {templateUrl: 'partials/quickLinks.html', controller: 'quickLinksCtrl'}).
             when('/courses', {templateUrl: 'partials/courses.html', controller: 'coursesCtrl'}).
-             when('/courseSelected', {templateUrl: 'partials/courseSelected.html', controller: 'courseSelectedCtrl'}).
+            when('/courseSelected', {templateUrl: 'partials/courseSelected.html', controller: 'courseSelectedCtrl'}).
+            when('/programSelected', {templateUrl: 'partials/programSelected.html', controller: 'programSelectedCtrl'}).
+            when('/streamSelected', {templateUrl: 'partials/streamSelected.html', controller: 'streamSelectedCtrl'}).
+            when('/singleAwardRule', {templateUrl: 'partials/singleAwardRule.html', controller: 'singleAwardRuleCtrl'}).
             otherwise({redirectTo: '/home'});
     });

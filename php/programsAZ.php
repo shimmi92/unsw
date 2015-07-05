@@ -17,7 +17,7 @@ echo $SL;
       echo "Opened database successfully\n";
    }
 
-   $result = pg_query($db, "SELECT name,career,code,award_name from program_az_award where rtype = 'PR' and career = '$SL'");
+   $result = pg_query($db, "SELECT name,career,rtype,code,ouname from active_objects where rtype = 'PR' and career = '$SL'");
 if (!$result) {
   echo "An error occurred.\n";
   exit;
@@ -29,7 +29,7 @@ $allelements = array();
 //loop to get json format for datatables.
 while ($row = pg_fetch_row($result)) {
   
-  $temp = array("name"=>$row[0],"career"=>$row[1],"code"=>$row[2],"ouname"=>$row[3]);
+  $temp = array("name"=>$row[0],"career"=>$row[1],"rtype"=>$row[2],"code"=>$row[3],"ouname"=>$row[4]);
  
   array_push($allelements, $temp);
 

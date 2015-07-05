@@ -32,7 +32,21 @@ app.factory('quickLinkFlags', function ($rootScope){
                fsFlag:false,
                ctFlag:false,
                glossaryFlag:false,
-               clickedData:undefined
+               clickedData:undefined,
+               streamData:undefined,
+               rulesCode:"",
+               gotProg:undefined,
+
+                      }
+         return vars;
+
+ })
+//factory to hold the values types of information selected when displaying program rules
+.factory('programTypeSelect', function ($rootScope){
+         var vars = $rootScope.$new(true);
+         vars.data = {
+               singleAward:false,
+               dualAward:false,
 
                       }
          return vars;
@@ -88,7 +102,7 @@ app.factory('quickLinkFlags', function ($rootScope){
 
  })
 //factory to connect to database
-.factory('sendQuery',['$http','studyLevel', function($http,studyLevel){
+.factory('sendQuery',['$http','studyLevel','courseSelectionFLags', function($http,studyLevel,courseSelectionFLags){
      
      var sendQuery = {};
     
@@ -101,6 +115,52 @@ app.factory('quickLinkFlags', function ($rootScope){
             data: {
                "query":"programsAZ",
                "SL":studyLevel.data.selectedStudyLevel, 
+
+            },
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+ 
+     };
+    sendQuery.sendST = function(){
+        console.log(studyLevel.data.selectedStudyLevel);
+      console.log('calledsend');
+       return $http({
+            method: "post",
+            url: "php/streams.php",
+            data: {
+               "query":"streams",
+               "SL":studyLevel.data.selectedStudyLevel, 
+
+            },
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+ 
+     };
+
+     sendQuery.sendRule= function(){
+      console.log(courseSelectionFLags.data.clickedData.code);
+      console.log('calledsend rules');
+       return $http({
+            method: "post",
+            url: "php/rules.php",
+            data: {
+               "query":"programRules",
+               "code":courseSelectionFLags.data.clickedData.code, 
+
+            },
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+ 
+     };
+    sendQuery.sendStreamRules1 = function(){
+      console.log(courseSelectionFLags.data.streamData.code);
+      console.log('called sendStreamRules1');
+       return $http({
+            method: "post",
+            url: "php/streamRules1.php",
+            data: {
+               "query":"specificStreamRules1",
+               "code":courseSelectionFLags.data.streamData.code, 
 
             },
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
